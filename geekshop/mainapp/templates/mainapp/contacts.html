@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Контакты</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+
+<body class="body_ix">
+    <div class="header">
+       
+        <div class="logo">
+            <img src="/static/img/logo.jpeg" alt="logo" width="100">
+        </div>
+
+        <div class="divmenu">
+            <ul class="menu">
+                <li><a href="/">Главная</a></li>
+                <li><a href="/contacts/">Контакты</a></li>
+                <li><a href="/helicopter/">Каталог</a></li>
+            </ul>
+        </div>
+
+    </div>
+    <div class="content_contact">
+        <h2 class="heading"><b>Адрес</b></h2>
+        <p>Мы работаем ежедневно с 09:00 до 21:00 по Московскому времени. Прием заявок на сайте - круглосуточно!<br>
+            <br>
+            Тел.: +7 (800) 888-88-88<br>
+            <br>
+            Тел.: +7 (495) 888-88-88<br>
+            <br>
+            Адрес: улица часовая, д.5, стр 10<br>
+            <br>
+            Электронный адрес: info@rtoy.ru </p>
+
+
+        <div style="overflow:hidden;width: 100%;height: 374px;"><iframe width="100%" height="374px" src="https://maps.google.com/maps?width=700&amp;height=440&amp;hl=en&amp;q=Moscow%2C%20Russia+(%D0%9D%D0%B0%D0%B7%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5)&amp;ie=UTF8&amp;t=&amp;z=10&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth=""></iframe>
+            <div><small><a href="https://embedgooglemaps.com/en/">https://embedgooglemaps.com/en/</a></small></div>
+            <div><small><a href="https://iamsterdamcard.it">iamsterdamcard.it</a></small></div>
+            <style>#gmap_canvas img{max-width:none!important;background:none!important}</style>
+        </div><br />
+
+        <h2 class="heading"><b>Напишите нам</b></h2>
+
+
+        <form class="form_add" action="#">
+            <fieldset>
+                <legend>Форма обратной связи</legend>
+
+                <label for="name">Имя</label><br>
+                <input type="text" size="30" placeholder="Имя">
+
+                <br>
+
+                <label for="email">Email</label><br>
+                <input type="email" size="30" placeholder="email">
+
+                <br>
+
+                <label for="topic">Тема</label><br>
+                <select name="topic">
+                    <option value="recall" selected>Отзыв</option>
+                    <option value="comlaint">Жалоба</option>
+                    <option value="user_topic">Свой Вариант</option>
+                </select>
+
+                <br>
+
+                <label for="comment">Текст сообщения</label><br>
+                <textarea name="comment" cols="42" rows="7" placeholder="Сообщение" id="comment"></textarea>
+
+                <br>
+
+                <input type="checkbox" name="back_call">
+                <label for="back_call">Заказать обратный звонок</label>
+
+                <br>
+                <label for="phone"></label><br>
+                <input type="text" placeholder="+7-903-***-**-**"><br>
+
+                <br>
+
+                <input type="file"><br>
+                <br>
+                <input type="submit" value="Отправить">
+                <input type="reset" value="Очистить">
+            </fieldset>
+        </form>
+    </div>
+    <div class="footer_catalog">
+        <div class="defense">
+            <p>Все права защищены &copy; 2019 </p>
+        </div>
+    </div>
+</body>
+</html>
