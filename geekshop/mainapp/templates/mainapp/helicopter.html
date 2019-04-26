@@ -1,47 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'mainapp/base.html' %}
 
-<head>
-    <meta charset="UTF-8">
+{% load static %}
+
+{% block title %}
     <title>Каталог</title>
-    <link rel="stylesheet" href="/static/css/style.css">
-</head>
+{% endblock %}
+
+{% block content %}
+
 
 <body class="body_ix">
 
     <div class="header">
-
+        {% include 'mainapp/includes/inc_menu.html'%}
         <div class="logo">
             <img src="/static/img/logo.jpeg" alt="logo" width="100">
         </div>
 
-        <div class="divmenu">
-            <ul class="menu">
-                <li><a href="/">Главная</a></li>
-                <li><a href="/contacts/">Контакты</a></li>
-                <li><a href="/helicopter/">Каталог</a></li>
-            </ul>
-        </div>
-
     </div>
     <div class="content_catalog">
-        <div class=head>
+        <div class="head">
             <h1>Каталог</h1>
         </div>
         
         <ol class="prod_list">
             <li><img src="../../../static/img/symas5.png" alt="SYMA S5" title="SYMA S5" width="190" height="140"> <br>
-                <a href="catalog/page1.html">Syma S5</a></li>
+                <a href="/">Syma S5</a></li>
             <li><img src="../../../static/img/symas109g.jpg" alt="SYMA S5" title="SYMA S109g" width="190" height="140"><br>
-            <a href="catalog/page2.html">Syma S109g</a></li>
+            <a href="/">Syma S109g</a></li>
             <li><img src="../../../static/img/symas109g.jpg" alt="SYMA S5" title="SYMA S109g" width="190" height="140"><br>
-            <a href="catalog/page2.html">Syma S109g</a></li>
+            <a href="/">Syma S109g</a></li>
             <li><img src="../../../static/img/symas109g.jpg" alt="SYMA S5" title="SYMA S109g" width="190" height="140"><br>
-            <a href="catalog/page2.html">Syma S109g</a></li>
+            <a href="/">Syma S109g</a></li>
             <li><img src="../../../static/img/symas5.png" alt="SYMA S5" title="SYMA S5" width="190" height="140"> <br>
-                <a href="catalog/page1.html">Syma S5</a></li>
+                <a href="/">Syma S5</a></li>
             <li><img src="../../../static/img/symas109g.jpg" alt="SYMA S5" title="SYMA S109g" width="190" height="140"><br>
-            <a href="catalog/page2.html">Syma S109g</a></li>
+            <a href="/">Syma S109g</a></li>
         </ol>
 
 
@@ -53,4 +47,6 @@
     </div>
 </body>
 
-</html>
+{% endblock %}
+{% block js %}
+{% endblock %}

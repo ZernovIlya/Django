@@ -1,25 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'mainapp/base.html' %}
 
-<head>
-    <meta charset="UTF-8">
-    <title>Контакты</title>
-    <link rel="stylesheet" href="/static/css/style.css">
-</head>
+{% load static %}
 
+{% block title %}
+        <title>Контакты</title>
+{% endblock %}
+
+{% block content %}
 <body class="body_ix">
     <div class="header">
-       
+       {% include 'mainapp/includes/inc_menu.html'%}
         <div class="logo">
             <img src="/static/img/logo.jpeg" alt="logo" width="100">
-        </div>
-
-        <div class="divmenu">
-            <ul class="menu">
-                <li><a href="/">Главная</a></li>
-                <li><a href="/contacts/">Контакты</a></li>
-                <li><a href="/helicopter/">Каталог</a></li>
-            </ul>
         </div>
 
     </div>
@@ -95,4 +87,7 @@
         </div>
     </div>
 </body>
-</html>
+{% endblock %}
+{% block js %}
+{% endblock %}
+
