@@ -17,10 +17,12 @@ from django.urls import path
 from django.contrib import admin
 import mainapp.views as mainapp
 
+from django.contrib import admin
+from django.urls import path
+import mainapp.views as mainapp
 urlpatterns = [
-    path('', mainapp.main),
-    path('helicopter/', mainapp.products),
-    path('contacts/', mainapp.contact),
-    path('admin/', admin.site.urls),
+path('', mainapp.main, name= 'main' ),
+path( 'helicopter/' , mainapp.products, name= 'products' ),
+path( 'contact/' , mainapp.contact, name= 'contact' ),
+path( 'admin/' , admin.site.urls, name='admin')
 ]
-
