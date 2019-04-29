@@ -30,6 +30,19 @@
 
             <p>R-TOY.RU предлагает разнообразный спектр продукции: от&nbsp;простых моделей, ориентированных на&nbsp;широкую аудиторию, которые подойдут в&nbsp;том числе и&nbsp;начинающим, до&nbsp;уникальных устройств, требующих опыта в&nbsp;этом увлекательном деле.</p>
         </div>
+
+        {% for product in products %}
+            <div class = "block" >
+                <a href = "#" >
+                    <img src = "/media/{{ product.image }}" alt = "{{ product.short_desc }}" >
+                    <div class = "text" >
+                        <h3>{{ product.category.name }}</ h3 >
+                        <h4>{{ product.name }}</ h4 >
+                        <p>{{ product.description }}</ p >
+                    </div>
+                    </a>
+            </div>
+        {%endfor%}
         <div class="footer_catalog">
             <div class="defense ">
                 <p>Все права защищены &copy; {%now 'Y'%} </p>

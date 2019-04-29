@@ -17,3 +17,9 @@ def contact(request):
 from django.shortcuts import render
 
 # Create your views here.
+from .models import ProductCategory, Product
+def main (request):
+    title = 'главная'
+    products = Product.objects.all()[: 4 ]
+    content = { 'title' : title, 'products' : products}
+    return render(request, 'mainapp/index.html' , content)
