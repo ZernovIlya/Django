@@ -1,0 +1,41 @@
+{% extends 'mainapp/base.html' %}
+
+{% load static %}
+
+{% block title %}
+    <title>Каталог</title>
+{% endblock %}
+
+{% block content %}
+
+
+<body class="body_ix">
+
+    <div class="header">
+        {% include 'mainapp/includes/inc_menu.html'%}
+        <div class="logo">
+            <img src="/static/img/logo.jpeg" alt="logo" width="100">
+        </div>
+
+    </div>
+        <div class="content_catalog">
+        <div class="head">
+            <h1>Каталог</h1>
+        </div>
+    {% for product in products %}
+        <h3>{{ product.name }}</h3>
+        <img src={{ product.image.url }}>
+        <div>{{ product.short_desc }}</div>
+    {% endfor %}
+
+    </div>
+    <div class="footer_catalog">
+        <div class="defense ">
+            <p>Все права защищены &copy; 2019 </p>
+        </div>
+    </div>
+</body>
+
+{% endblock %}
+{% block js %}
+{% endblock %}
