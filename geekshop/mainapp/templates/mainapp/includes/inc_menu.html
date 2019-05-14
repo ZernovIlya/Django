@@ -1,0 +1,13 @@
+ <div class="divmenu">
+     <ul class="menu">
+         <li><a class="{% if request.resolver_match.url_name == 'main' %}
+                        active
+                        {% endif %}" href="{% url 'main' %}">Главная</a></li>
+         <li><a class="{% if request.resolver_match.url_name == 'contact' %}
+                        active
+                        {% endif %}" href="{% url 'contacts' %}">Контакты</a></li>
+         <li><a class="{% if request.resolver_match.url_name == 'products' %}
+                        active
+                        {% endif %}" href="{% url 'products' %}">Каталог</a></li>
+      </ul>
+ </div>

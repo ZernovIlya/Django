@@ -1,25 +1,17 @@
 from django.shortcuts import render
-
+from .models import Product, ProductCategory
 
 def main(request):
     context = {'user':{'name':'человек'}}
     return render(request, 'mainapp/index.html', context)
 
+def products(request, pk=None):
+    # Product.objects.filter(category=pk)
+    context = {'products': Product.objects.all()}
+    return render(request, 'mainapp/products.html', context)
 
-def products(request):
-    return render(request, 'mainapp/helicopter.html')
-
-
-def contact(request):
+def contacts(request):
     return render(request, 'mainapp/contacts.html')
 
-
-from django.shortcuts import render
-
-# Create your views here.
-from .models import ProductCategory, Product
-def main (request):
-    title = 'главная'
-    products = Product.objects.all()[: 4 ]
-    content = { 'title' : title, 'products' : products}
-    return render(request, 'mainapp/index.html' , content)
+def common(request):
+    return render(request, 'common/index.html')
