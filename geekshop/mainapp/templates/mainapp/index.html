@@ -13,7 +13,7 @@
         <div class="header">
             {% include 'mainapp/includes/inc_menu.html'%}
             <div class="logo">
-                <img src="/static/img/logo.jpeg" alt="logo" alt="logo" width="100">
+                <img src="/static/img/logo.jpeg" alt="logo" width="100">
             </div>
             <!--
             <div class=head>
@@ -23,26 +23,21 @@
 
         </div>
         <div class="container">
-            <p> Здравствуй, {{user.name|title}}!</p>
+            <p> Здравствуй, {{ request.user.username|title }}!</p>
+            {% if request.user.is_anonymous %}
+                <a href="{% url 'auth:login' %}">Войти</a> или <a href="{% url 'auth:register' %}">Зарегистрироваться</a>
+            {% endif %}
+            {% if request.user.is_authenticated %}
+                <a href="{% url 'auth:edit' request.user.id %}">Редактировать</a>
+                <br>
+                <a href="{% url 'auth:logout' %}">Выйти</a>
+            {% endif %}
             <p>Интернет-магазин R-TOY.RU предлагает широкий ассортимент радиоуправляемых моделей от&nbsp;ведущих производителей. Моделизм&nbsp;&mdash; это увлекательное хобби для детей и&nbsp;взрослых, широкие возможности для активного отдыха и&nbsp;интересное направление в&nbsp;спорте.</p>
 
             <p>Если вы&nbsp;любите драйв и&nbsp;скорость, мы&nbsp;подарим вам яркие эмоции. Радиоуправляемые модели могут стать отличным подарком как ребенку, так и&nbsp;взрослому мужчине: современные игрушки отличаются серьезными инженерными характеристиками, поэтому будут интересны каждому любителю техники.</p>
 
             <p>R-TOY.RU предлагает разнообразный спектр продукции: от&nbsp;простых моделей, ориентированных на&nbsp;широкую аудиторию, которые подойдут в&nbsp;том числе и&nbsp;начинающим, до&nbsp;уникальных устройств, требующих опыта в&nbsp;этом увлекательном деле.</p>
         </div>
-
-        {% for product in products %}
-            <div class = "block" >
-                <a href = "#" >
-                    <img src = "/media/{{ product.image }}" alt = "{{ product.short_desc }}" >
-                    <div class = "text" >
-                        <h3>{{ product.category.name }}</ h3 >
-                        <h4>{{ product.name }}</ h4 >
-                        <p>{{ product.description }}</ p >
-                    </div>
-                    </a>
-            </div>
-        {%endfor%}
         <div class="footer_catalog">
             <div class="defense ">
                 <p>Все права защищены &copy; {%now 'Y'%} </p>
