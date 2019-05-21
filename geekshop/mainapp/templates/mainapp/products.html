@@ -1,5 +1,5 @@
 {% extends 'mainapp/base.html' %}
-
+{% load custom_tags %}
 {% load static %}
 
 
@@ -16,14 +16,14 @@
         <div class="logo">
             <img src="/static/img/logo.jpeg" alt="logo" width="100">
         </div>
-
     </div>
 
         <div class="head">
             <h1>Каталог</h1>
         </div>
 
-<div>Количество продуктов в корзине: {{ basket_quantity }}</div>
+<div>Количество продуктов в корзине: {{ request.user|basket_total_quantity }}</div>
+<div>Общая стоимость корзины: {{ request.user|basket_total_cost }}</div>
     {% include 'mainapp/includes/inc_category_menu.html' %}
     <div style="display: flex; flex-wrap: wrap;" class="category-products clearfix">
         {% for product in products %}

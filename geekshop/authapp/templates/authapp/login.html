@@ -8,6 +8,9 @@
         <span>Имя пользователя</span>
         <input name="username">
         <br>
+        {% if next %}
+            <input name="next" type="hidden" value={{ next }}>
+        {% endif %}
         <span>Пароль</span>
         <input name="password" type="password">
         <br>
