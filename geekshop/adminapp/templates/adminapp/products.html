@@ -5,6 +5,13 @@
     <title>{{ title }}</title>
 </head>
 <body>
+<h2>МЕНЮ</h2>
+{% block menu %}
+      <div class="admin_menu">
+        {% include 'adminapp/includes/inc_menu.html' %}
+      </div>
+    {% endblock %}
+
 <h2>Категории</h2>
 {% include 'adminapp/includes/inc_category_menu.html' %}
 <h2>Продукты</h2>
