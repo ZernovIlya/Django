@@ -20,6 +20,8 @@ from django.conf.urls import include
 import mainapp.views as mainapp
 from django.conf.urls.static import static
 from django.conf import settings
+if settings.DEBUG:
+    import debug_toolbar
 
 urlpatterns = [
     path('', mainapp.main, name='main'),
@@ -30,6 +32,7 @@ urlpatterns = [
     path('basket/', include('basketapp.urls', namespace='basket')),
     path('admin_custom/', include('adminapp.urls', namespace='admin_custom')),
     path('admin/', admin.site.urls),
+    path('__debug__/', include(debug_toolbar.urls)),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

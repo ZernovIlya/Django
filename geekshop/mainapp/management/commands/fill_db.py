@@ -1,8 +1,18 @@
+from configparser import RawConfigParser
+
 from django.core.management.base import BaseCommand
+from geekshop.settings import BASE_DIR
 from mainapp.models import ProductCategory, Product
 from authapp.models import ShopUser
 
+
 import json, os
+
+local_config_path = os.path.join(BASE_DIR, 'conf', 'local.conf')
+config = RawConfigParser()
+config.read(local_config_path)
+
+
 
 JSON_PATH = 'mainapp/json'
 
@@ -35,4 +45,4 @@ class Command(BaseCommand):
 
         # Создаем суперпользователя при помощи менеджера модели
         ShopUser.objects.all().delete()
-        ShopUser.objects.create_superuser('admin', 'admin@geekshop.local', 'admin', age=19)
+        ShopUser.objects.create_superuser(config.getboolean('admin', 'ShopUser.objects.create_superuser'))

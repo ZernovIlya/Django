@@ -18,7 +18,7 @@ def basket_total_cost(user):
     if user.is_anonymous:
         return 0
     else:
-        items = user.basket.all()
+        items = user.basket.select_related('product').all()
         # items = Basket.objects.filter(user=user)
         total_cost = sum(list(map(lambda x: x.product.price * x.quantity, items)))
         return total_cost
